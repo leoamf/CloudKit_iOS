@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579B5C562128522100E92725 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5C552128522100E92725 /* NewUserViewController.swift */; };
+		579B5C5821285FE000E92725 /* NewSimpleRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5C5721285FE000E92725 /* NewSimpleRecordTableViewController.swift */; };
+		579B5C5A212863C100E92725 /* NewSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5C59212863C100E92725 /* NewSubscriptionViewController.swift */; };
+		579B5C5C2128680200E92725 /* NewQueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5C5B2128680200E92725 /* NewQueryTableViewController.swift */; };
+		579B5C5E2128684B00E92725 /* NewQueryTypeSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5C5D2128684B00E92725 /* NewQueryTypeSelectorTableViewController.swift */; };
 		DD0745001E7ED46E00C231DE /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0744FF1E7ED46E00C231DE /* SubscriptionViewController.swift */; };
 		DD23C1431E7EDE49009E0F24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD23C1421E7EDE49009E0F24 /* Localizable.strings */; };
 		DD501A611E75BE6D00EBD001 /* QueryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD501A601E75BE6D00EBD001 /* QueryTableViewController.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		579B5C552128522100E92725 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		579B5C5721285FE000E92725 /* NewSimpleRecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleRecordTableViewController.swift; sourceTree = "<group>"; };
+		579B5C59212863C100E92725 /* NewSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubscriptionViewController.swift; sourceTree = "<group>"; };
+		579B5C5B2128680200E92725 /* NewQueryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQueryTableViewController.swift; sourceTree = "<group>"; };
+		579B5C5D2128684B00E92725 /* NewQueryTypeSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQueryTypeSelectorTableViewController.swift; sourceTree = "<group>"; };
 		DD0744FF1E7ED46E00C231DE /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		DD23C1401E7EDDDE009E0F24 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		DD23C1411E7EDDDE009E0F24 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -51,6 +61,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		579B5C5421284F4F00E92725 /* ControllersNew */ = {
+			isa = PBXGroup;
+			children = (
+				579B5C552128522100E92725 /* NewUserViewController.swift */,
+				579B5C5721285FE000E92725 /* NewSimpleRecordTableViewController.swift */,
+				579B5C59212863C100E92725 /* NewSubscriptionViewController.swift */,
+				579B5C5B2128680200E92725 /* NewQueryTableViewController.swift */,
+				579B5C5D2128684B00E92725 /* NewQueryTypeSelectorTableViewController.swift */,
+			);
+			name = ControllersNew;
+			sourceTree = "<group>";
+		};
 		DD96F4041E6C4BA500CABB08 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +96,7 @@
 				DD96F4221E6C4BDE00CABB08 /* CloudKitchenSink.entitlements */,
 				DD96F4281E6C4D8300CABB08 /* Bootstrap */,
 				DD96F4261E6C4D6B00CABB08 /* Resources */,
+				579B5C5421284F4F00E92725 /* ControllersNew */,
 				DD96F4271E6C4D7900CABB08 /* Controllers */,
 			);
 			path = CloudKitchenSink;
@@ -202,9 +225,14 @@
 				DD0745001E7ED46E00C231DE /* SubscriptionViewController.swift in Sources */,
 				DD96F42C1E6C59ED00CABB08 /* SimpleRecordTableViewController.swift in Sources */,
 				DD96F4131E6C4BA500CABB08 /* UserViewController.swift in Sources */,
+				579B5C5C2128680200E92725 /* NewQueryTableViewController.swift in Sources */,
 				DD96F4111E6C4BA500CABB08 /* AppDelegate.swift in Sources */,
 				DD501A611E75BE6D00EBD001 /* QueryTableViewController.swift in Sources */,
+				579B5C5821285FE000E92725 /* NewSimpleRecordTableViewController.swift in Sources */,
+				579B5C5A212863C100E92725 /* NewSubscriptionViewController.swift in Sources */,
 				DD501A631E75BF7700EBD001 /* QueryTypeSelectorTableViewController.swift in Sources */,
+				579B5C5E2128684B00E92725 /* NewQueryTypeSelectorTableViewController.swift in Sources */,
+				579B5C562128522100E92725 /* NewUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +364,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CloudKitchenSink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,6 +384,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CloudKitchenSink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

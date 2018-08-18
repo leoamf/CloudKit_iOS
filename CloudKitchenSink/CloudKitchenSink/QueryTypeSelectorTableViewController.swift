@@ -15,11 +15,12 @@ class QueryTypeSelectorTableViewController: UITableViewController {
             fatalError("Unknown query type \(String(describing: segue.identifier))")
         }
         
-        guard let destination = segue.destination as? QueryTableViewController else {
-            fatalError("Query type segue destination must be a QueryTableViewController")
+        if(segue.identifier != "newScreen"  ){
+            guard let destination = segue.destination as? QueryTableViewController else {
+                fatalError("Query type segue destination must be a QueryTableViewController")
+            }
+            destination.queryType = queryType
         }
-        
-        destination.queryType = queryType
     }
 
 }

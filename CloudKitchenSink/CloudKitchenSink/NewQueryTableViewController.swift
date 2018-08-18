@@ -1,4 +1,12 @@
 //
+//  NewQueryTableViewController.swift
+//  CloudKitchenSink
+//
+//  Created by aluno on 18/08/18.
+//  Copyright © 2018 Guilherme Rambo. All rights reserved.
+//
+
+//
 //  QueryTableViewController.swift
 //  CloudKitchenSink
 //
@@ -10,29 +18,27 @@ import UIKit
 import CloudKit
 import CoreLocation
 
-enum QueryType: String {
+enum NewQueryType: String {
     
-    case all
-    case title
-    case location
-    case newScreen
+    case allNew
+    case titleNew
+    case locationNew
     
     var title: String {
         switch self {
-        case .all:
-            return "All Records"
-        case .title:
-            return "Search by Title"
-        case .location:
-            return "Search by Location"
-        case .newScreen:
-            return "Nova tela"
+        case .allNew:
+            return "All Records (New screen)"
+        case .titleNew:
+            return "Search by Title (New screen)"
+        case .locationNew:
+            return "Search by Location (New screen)"
+         
         }
     }
     
 }
 
-final class QueryTableViewController: UITableViewController {
+final class NewQueryTableViewController: UITableViewController {
     
     @IBOutlet weak var searchContainer: UIStackView!
     @IBOutlet weak var textField: UITextField!
@@ -52,7 +58,7 @@ final class QueryTableViewController: UITableViewController {
         }
     }
     
-    var queryType: QueryType? {
+    var queryType: NewQueryType? {
         didSet {
             guard let queryType = queryType else { return }
             
@@ -69,7 +75,7 @@ final class QueryTableViewController: UITableViewController {
         
         guard let queryType = queryType else { return }
         
-        if queryType != .title {
+        if queryType != .titleNew  {
             tableView.tableHeaderView = nil
             search(self)
         } else {
@@ -98,10 +104,9 @@ final class QueryTableViewController: UITableViewController {
         return NSPredicate(format: "self contains %@", title)
     }
     
-    private func predicate(closeTo location: CLLocation, radius: Float = 500.0) -> NSPredicate {
+    private func predicate(closeTo location: CLLocation, radius: Float = 5000.0) -> NSPredicate {
         return NSPredicate(format: "distanceToLocation:fromLocation:(location, %@) < %f", location, radius)
     }
-    
     private func predicateForAll() -> NSPredicate {
         return NSPredicate(value: true)
     }
@@ -123,11 +128,11 @@ final class QueryTableViewController: UITableViewController {
         let predicate: NSPredicate
         
         switch queryType {
-        case .all:
+        case .allNew:
             predicate = self.predicateForAll()
-        case .title:
+        case .titleNew:
             predicate = self.predicate(with: textField.text ?? "")
-        case .location:
+        case .locationNew:
             if let location = currentLocation {
                 predicate = self.predicate(closeTo: location)
             } else {
@@ -135,8 +140,6 @@ final class QueryTableViewController: UITableViewController {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 return
             }
-        default:
-            return
         }
         
         let query = CKQuery(recordType: "Movie", predicate: predicate)
@@ -207,7 +210,7 @@ final class QueryTableViewController: UITableViewController {
     
 }
 
-extension QueryTableViewController: CLLocationManagerDelegate {
+extension NewQueryTableViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
@@ -222,3 +225,4 @@ extension QueryTableViewController: CLLocationManagerDelegate {
     }
     
 }
+
